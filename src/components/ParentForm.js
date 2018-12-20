@@ -4,7 +4,7 @@ import Panel2 from "./Panel2";
 import Panel3 from "./Panel3";
 import Panel4 from "./Panel4";
 
-export class ParentUserForm extends Component {
+export class ParentForm extends Component {
   state = {
     step: 1,
     firstName: "",
@@ -80,4 +80,4 @@ export class ParentUserForm extends Component {
   }
 }
 
-export default ParentUserForm;
+export default ParentForm;
