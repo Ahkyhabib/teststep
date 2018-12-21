@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import Header from './Header'
-
+import Footer from './Footer'
 
 
 export class Panel1 extends Component {
   render() {
     return (
       <div>
-        <Header 
-        title="test" />
-        <h1>Temp</h1>
+        <Header />
+        <Footer />
+        
       </div>
     )
   }
