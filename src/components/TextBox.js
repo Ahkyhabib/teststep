@@ -1,45 +1,47 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+//import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
-import MenuItem from '@material-ui/core/MenuItem';
+//import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem';
 
 const styles = theme => ({
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  textField: {
-    marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
-  },
-  dense: {
-    marginTop: 16,
-  },
-  menu: {
-    width: 200,
-  },
+//   container: {
+//     display: 'flex',
+//     flexWrap: 'wrap',
+//   },
+//   textField: {
+//     marginLeft: theme.spacing.unit,
+//     marginRight: theme.spacing.unit,
+//   },
+//   dense: {
+//     marginTop: 16,
+//   },
+//   menu: {
+//     width: 200,
+//   },
 });
 
-const currencies = [
-  {
-    value: 'USD',
-    label: '$',
-  },
-  {
-    value: 'EUR',
-    label: '€',
-  },
-  {
-    value: 'BTC',
-    label: '฿',
-  },
-  {
-    value: 'JPY',
-    label: '¥',
-  },
-];
+// const currencies = [
+//   {
+//     value: 'USD',
+//     label: '$',
+//   },
+//   {
+//     value: 'EUR',
+//     label: '€',
+//   },
+//   {
+//     value: 'BTC',
+//     label: '฿',
+//   },
+//   {
+//     value: 'JPY',
+//     label: '¥',
+//   },
+// ];
 
 class OutlinedTextFields extends React.Component {
   state = {
@@ -47,7 +49,8 @@ class OutlinedTextFields extends React.Component {
     age: '',
     multiline: 'Controlled',
     currency: 'EUR',
-    address:''
+    address:'',
+    email:''
   };
 
   handleChange = name => event => {
@@ -61,6 +64,8 @@ class OutlinedTextFields extends React.Component {
 
     return (
       <form className={classes.container} noValidate autoComplete="off">
+        <List>
+        <ListItem>    
         <TextField
           id="outlined-name"
           label="Name"
@@ -70,7 +75,6 @@ class OutlinedTextFields extends React.Component {
           margin="normal"
           variant="outlined"
         />
-        <br/>
         <TextField
           id="outlined-address"
           label="Address"
@@ -80,7 +84,17 @@ class OutlinedTextFields extends React.Component {
           margin="normal"
           variant="outlined"
         />
-        
+        <TextField
+          id="outlined-email"
+          label="Email"
+          className={classes.textField}
+          value={this.state.address}
+          onChange={this.handleChange('email')}
+          margin="normal"
+          variant="outlined"
+        />
+       </ListItem> 
+       </List> 
       </form>
     );
   }

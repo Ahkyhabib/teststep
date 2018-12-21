@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import Header from './Header'
 import Footer from './Footer'
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
-import TextField from '@material-ui/core/TextField';
+//import TextField from '@material-ui/core/TextField';
 import TextBox from './TextBox';
+import Button from './Button'
 
 const styles = {
   root: {
@@ -15,6 +16,10 @@ const styles = {
 
 
 export class Panel1 extends Component {
+  continue = e => {
+    e.preventDefault();
+    this.props.nextStep();
+  };
   render() {
 // Puling in values (fistName, lastName...)
 const { values, handleChange } = this.props;
@@ -25,11 +30,15 @@ const { values, handleChange } = this.props;
         <MuiThemeProvider>
         <React.Fragment>
         <Header />
-          
-          <br />
-          <TextBox />
-          
-          <Footer />
+        <TextBox />
+        <Button 
+         primary={true}
+         styles={styles.button}
+         onClick={this.continue}
+        />
+        
+        <br />
+        <Footer />
         </React.Fragment>
       </MuiThemeProvider>
        
@@ -38,4 +47,6 @@ const { values, handleChange } = this.props;
     )
   }
 }
+
+
 export default Panel1;
