@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import Header from './Header'
-import Footer from './Footer'
-import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
-//import TextField from '@material-ui/core/TextField';
+
+import Header from './Header';
+import Footer from './Footer';
 import TextBox from './TextBox';
-import Button from './Button'
+import ContButton from './ContButton';
+import PrevButton from './PrevButton';
 
 const styles = {
   root: {
@@ -20,27 +20,26 @@ export class Panel1 extends Component {
     e.preventDefault();
     this.props.nextStep();
   };
+
+  back = e => {
+    e.preventDefault();
+    this.props.prevStep();
+  };
+
   render() {
 // Puling in values (fistName, lastName...)
-const { values, handleChange } = this.props;
+// const {  handleChange } = this.props;
 
     return (
-     
         
-        <MuiThemeProvider>
         <React.Fragment>
         <Header />
         <TextBox />
-        <Button 
-         primary={true}
-         styles={styles.button}
-         onClick={this.continue}
-        />
-        
-        <br />
+        <ContButton />
+        <PrevButton />
         <Footer />
         </React.Fragment>
-      </MuiThemeProvider>
+      
        
         
     
