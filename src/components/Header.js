@@ -20,7 +20,7 @@ function SimpleAppBar(props) {
     <div className={classes.root}>
       <AppBar position="static" color="default" >
         <Toolbar>
-          <Typography variant="h6" color="">
+          <Typography variant="h6" color="#fff">
             Test prop
           </Typography>
         </Toolbar>

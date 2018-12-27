@@ -23,9 +23,7 @@ function ContainedButtons(props) {
       <Button className="next" variant="contained" color="primary" className={classes.button}>
       Continue
       </Button>
-      {/* <Button className="prev" variant="contained" color="primary" className={classes.button}>
-        Back
-      </Button> */}
+      
       
     </div>
   );

@@ -1,18 +1,12 @@
 import React, { Component } from 'react'
-
 import Header from './Header';
 import Footer from './Footer';
 import TextBox from './TextBox';
 import ContButton from './ContButton';
 import PrevButton from './PrevButton';
+//import Background from './Background';
 
-const styles = {
-  root: {
-    flexGrow: 1,
-    
-    
-  },
-};
+
 
 
 export class Panel1 extends Component {
@@ -31,14 +25,16 @@ export class Panel1 extends Component {
 // const {  handleChange } = this.props;
 
     return (
-        
-        <React.Fragment>
+        <div className="body">
+          {/* <Background /> */}
         <Header />
         <TextBox />
-        <ContButton />
+        <div className="button">
         <PrevButton />
+        <ContButton />
+        </div>
         <Footer />
-        </React.Fragment>
+        </div>
       
        
         
